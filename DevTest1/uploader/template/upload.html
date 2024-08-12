@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    
+    <div class="center">
+        
+        <h1>Summary Generator and Email Dispatcher(.xlsx)</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+
+        {% if success_message %}
+            <h3 id="successMessage" style="color:rgb(40, 213, 40);">{{ success_message }}</h3>
+        {% endif %}
+        
+        {% if error_message %}
+            <h3 id="errorMessage" style="color:red;">{{ error_message }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
