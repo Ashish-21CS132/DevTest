@@ -22,7 +22,7 @@ def upload_file(request):
                 # Send email
                 email_subject = 'Python Assignment - Ashish Gupta'
                 email_body = summary.to_string()
-                send_mail(email_subject, email_body, 'ashu170800@gmail.com', ['roguptaji76@gmail.com'], fail_silently=False)
+                send_mail(email_subject, email_body, 'ashu170800@gmail.com', ['tech@themedius.ai', 'yash@themedius.ai', 'ashishguptaji21@gmail.com'], fail_silently=False)
                 
                 success_message = 'File uploaded and email sent successfully!✌️'
             except Exception as e:
